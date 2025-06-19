@@ -25,3 +25,25 @@ ol
 {
     list-style-type:"- ";
 }
+figure
+{
+    text-align:center;
+    font-style:italic;
+    color:aliceblue;
+}
+h2
+{
+    color:aqua;
+}
+a
+{
+    color:aliceblue;
+}
+a:hover, a:hover:visited
+{
+    color:blue;
+}
+a:visited
+{
+    color:green;
+}
