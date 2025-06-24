@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Forms</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Web Forms</h1>
+    <main>
+        <form action="handler.php" method="post">
+            <div>
+                <label for="first_name">Имя:</label>
+                <input type="text"
+                       placeholder="Введите Ваше имя (только буквы)"
+                       id="first_name"
+                       name="first_name"
+                       size="32"
+                       minlength="3" maxlength="24"
+                       required
+                       pattern="^[A-ZА-Яa-zа-я]*" />
+            </div>
+            <div>
+                <label for="password">Пароль:</label>
+                <input type="password"
+                       id="password"
+                       name="password"
+                       size="32"
+                       placeholder="Введите пароль" />
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email" />
+            </div>
+            <input type="submit" value="Отправить" />
+        </form>
+    </main>
+</body>
+</html>
