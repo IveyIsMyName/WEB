@@ -1,0 +1,112 @@
+﻿body
+{
+    background-color:#323232;
+    color:lightgreen;
+    font-family:'Roboto Condensed';
+    margin:32px 324px;
+}
+h4
+{
+    text-align:right;
+}
+p
+{
+    text-align:justify;
+    font-size:14pt;
+}
+ol
+{
+    list-style-type:upper-roman;
+}
+.nesting-lvl-1
+{
+    list-style-type:circle;
+}
+.nesting-lvl-2
+{
+    list-style-type:"- ";
+}
+figure
+{
+    text-align:center;
+    font-style:italic;
+    color:aliceblue;
+}
+h2
+{
+    color:aqua;
+}
+a
+{
+    color:aliceblue;
+}
+a:hover, a:hover:visited
+{
+    color:blue;
+}
+a:visited
+{
+    color:green;
+}
+table
+{
+    border: solid 2px;
+    margin:auto;
+    border-spacing:0;
+}
+thead
+{
+    background-color:#6b5fb5;
+    border:solid 10px;
+    border-color:black;
+}
+td
+{
+    border: solid 1px;
+    text-align:center;
+}
+th
+{
+    border:solid 1px;
+    padding:11px 33px;
+}
+.table-first-header
+{
+    border-left: solid 2px #aeaed3;
+}
+.table-last-header
+{
+    border-right: solid 2px #aeaed3;
+}
+td[colspan="3"]
+{
+    text-align: center;
+    background-color: #6b5fb5;
+}
+.row-header
+{
+    text-align:left;
+}
+div
+{
+    border:solid 1px;
+    margin-left:32px;
+    margin-right:12px;
+    margin-top:22px;
+    margin-bottom:12px;
+    padding:12px;
+}
+table:hover
+{
+    /*box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;*/
+    /*box-shadow: 10px 10px 10px 10px grey;*/
+    box-shadow:0px 0px 25px 25px lightgrey;
+}
+tr:hover
+{
+    box-shadow: inset 0px -5px 5px blue;
+}
+td:hover
+{
+    box-shadow:initial 0px 5px 5px blue;
+}
