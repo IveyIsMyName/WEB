@@ -9,7 +9,7 @@
 <body>
     <h1>Web Forms</h1>
     <main>
-        <form action="handler.php" method="post">
+        <form method="post">
             <div>
                 <label for="first_name">Имя:</label>
                 <input type="text"
@@ -27,7 +27,11 @@
                        id="password"
                        name="password"
                        size="32"
-                       placeholder="Введите пароль" />
+                       placeholder="Введите пароль"
+                       required
+                       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$"
+                       title="Пароль должен содержать минимум 8 символов, включая заглавную и строчную буквы, цифру и специальный символ" />
+                <small>Пример правильного пароля: <code>Passw0rd!</code></small>
             </div>
             <div>
                 <label for="email">E-mail:</label>
