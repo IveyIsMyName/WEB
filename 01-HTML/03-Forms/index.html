@@ -29,13 +29,44 @@
                        size="32"
                        placeholder="Введите пароль"
                        required
-                       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*<>_,.?:\;&quot'\|+=\-\(\)\[\]\{\}]).{8,}$"
+                       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*<>_,.?:\;&quot'\|+=\-\(\)\[\]\{\}])(?!.*\s).{8,}$"
                        title="Пароль должен содержать минимум 8 символов, включая заглавную и строчную буквы, цифру и специальный символ" />
                 <small>Пример правильного пароля: <code>P@$$w0rd</code></small>
             </div>
             <div>
                 <label for="email">E-mail:</label>
                 <input type="email" name="email" id="email" />
+            </div>
+            <div>
+                <label for="phone-number"> Номер телефона:</label>
+                <input type="tel" 
+                       id="phone-number" 
+                       name="phone-number"
+                       placeholder="+7(XXX) XXX-XX-XX"
+                       pattern="\+7\(\d{3}\) \d{3}-\d{2}-\d{2}"
+                       />
+            </div>
+            <div>
+                <label for="birth-date">Дата рождения: </label>
+                <input type="date" 
+                       name="birth-date" 
+                       id="birth-date" 
+                       min="1950-01-01"
+                       max="2012-01-01"
+                       />
+            </div>
+            <div>
+                <label for="brief">Пару слов о себе:</label>
+                <textarea id="brief" name="brief"></textarea>
+            </div>
+            <div>
+                <img width="150" height="200" />
+                <label for="photo">Выберите фото</label>
+                <input type="file" id="photo" name="photo" />
+            </div>
+            <div>
+                <label for="color">Ваш любимый цвет</label>
+                <input type="color" name="color" id="color" />
             </div>
             <input type="submit" value="Отправить" />
         </form>

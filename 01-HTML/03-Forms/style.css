@@ -38,6 +38,8 @@ form div
 input[type="text"],
 input[type="password"],
 input[type="email"]
+input[type="tel"]
+input[type="date"]
 {
     padding: 4px;
     border: 1px solid #ddd;
@@ -64,5 +66,9 @@ input:invalid
 small
 {
     color: gray;
+}
+textarea
+{
+    max-width:275px;
 }
 
