@@ -17,7 +17,7 @@ h1
 main
 {
     width: 100%;
-    max-width: 300px;
+    max-width: 500px;
 }
 form
 {
@@ -69,6 +69,17 @@ small
 }
 textarea
 {
-    max-width:275px;
+    width:19em;
+    height:15em;
+    resize:none;
+}
+.EULA
+{
+    width: 37em;
+    height: 30em;
+    border: solid 1px;
+    padding: 5px;
+    overflow: scroll;
+    font-size:12px;
 }
 
