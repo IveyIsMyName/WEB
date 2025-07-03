@@ -5,7 +5,7 @@
     font-family: Tahoma;
 }
 
-.main-window
+/*.main-window
 {
     position: relative;
     width: 400px;
@@ -15,20 +15,36 @@
     margin: 100px auto 0;
     border-radius: 2px 2px 0 0;
     box-shadow:
-        -1px -1px 0 1px #0469EC, /* Голубая полоса между рамками */
-        0 0 0 3px #003c74, /* Внутренняя синяя рамка */
-        0 0 0 1px rgba(0,0,0,0.3), /* Внешняя тень */
-        inset 0 0 2px 2px rgba(255,255,255,0.7), /* Внутреннее свечение */
-        inset 0 0 3px 3px rgba(255,255,255,0.5); /* Внутренняя белая тень */
+        -1px -1px 0 1px #0469EC,*/ /* Голубая полоса между рамками */
+/*0 0 0 3px #003c74,*/ /* Внутренняя синяя рамка */
+/*0 0 0 1px rgba(0,0,0,0.3),*/ /* Внешняя тень */
+/*inset 0 0 2px 2px rgba(255,255,255,0.7),*/ /* Внутреннее свечение */
+/*inset 0 0 3px 3px rgba(255,255,255,0.5);*/ /* Внутренняя белая тень */
+/*}*/
+.main-window
+{
+    position: relative;
+    width: 400px;
+    height: 360px;
+    /*border: 1px solid;*/
+    background: linear-gradient(to bottom, #ece9d8, #e4e1d0);
+    margin: 100px auto 0;
+    border-radius: 2px 2px 0 0;
+    /*box-shadow:*/
+        /*-1px -1px 0 1px #0469EC,*/ /* Голубая полоса между рамками */
+    /*0 0 0 3px #003c74,*/ /* Внутренняя синяя рамка */
+    /*0 0 0 1px rgba(0,0,0,0.3),*/ /* Внешняя тень */
+    /*inset 0 0 2px 2px rgba(255,255,255,0.7),*/  /*Внутреннее свечение */
+    /*inset 0 0 3px 3px rgba(255,255,255,0.5);*/ /* Внутренняя белая тень */
 }
-  
+
 #app-icon
 {
     width: 24px;
     height: 24px;
 }
 
-.title-bar
+/*.title-bar
 {
     display: flex;
     justify-content: space-between;
@@ -39,9 +55,24 @@
     background-image: linear-gradient(#77CCFF, #0469EC, #0469EC,#0469EC, #0569FF,#0569FF,#0569FF);
     box-shadow: 
         inset 0px 0px 4px 1px #002195, 
-        0 1px 0 0 #003c74, /* Нижняя синяя граница */
-        0 1px 0 0 #0469EC; /* Верхняя голубая граница */
-    border-radius: 4px 4px 0 0; 
+        0 1px 0 0 #003c74,*/ /* Нижняя синяя граница */
+/*0 1px 0 0 #0469EC;*/ /* Верхняя голубая граница */
+/*border-radius: 4px 4px 0 0; 
+}*/
+.title-bar
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    color: white;
+    /* margin:-3px;*/
+    background-image: linear-gradient(#77CCFF, #0469EC, #0469EC,#0469EC, #0569FF,#0569FF,#0569FF);
+    /*box-shadow: 
+        inset 0px 0px 4px 1px #002195, 
+        0 1px 0 0 #003c74,*/ /* Нижняя синяя граница */
+    /*0 1px 0 0 #0469EC;*/ /* Верхняя голубая граница */
+    border-radius: 2px 2px 0 0;
 }
 
 .title-bar-left-side
@@ -89,4 +120,38 @@
 {
     color: lightgray;
     border-color: lightgrey;
+}
+
+.client-rect
+{
+    width: auto;
+    height: 317px;
+    display:block;
+}
+
+#main-area
+{
+    display: flex;
+    justify-content: space-between;
+}
+#bottom-border
+{
+    width: 100%;
+    height: 5px;
+    background-color: darkblue;
+    background-image: linear-gradient(to right,/*#001177CC,*/#003377FF,#001177CC);
+}
+#left-border
+{
+    width: 5px;
+    height: 317px;
+    /*background-color: darkblue;*/
+    background-image: linear-gradient(to right,#0022BBFF,#0469EC,#0022BBFF);
+}
+#right-border
+{
+    width: 5px;
+    height: 317px;
+    /*background-color: darkblue;*/
+    background-image: linear-gradient(to right,#001177CC,#003377FF,#001177CC);
 }
