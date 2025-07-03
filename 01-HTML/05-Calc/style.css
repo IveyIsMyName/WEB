@@ -1,79 +1,92 @@
 ﻿body
 {
-    background-image:url("img/bliss.jpg");
-    background-size:100%;
-    font-family:Tahoma;
+    background-image: url("img/bliss.jpg");
+    background-size: 100%;
+    font-family: Tahoma;
 }
+
 .main-window
 {
-    border:solid 1px;
-    /*position:relative;
-    left:400px;
-    top:100px;*/
-    align-self:center;
-    width:400px;
-    height:360px;
-    background:rgb(236,233,216);
-    border-top-left-radius:5px;
-    border-top-right-radius:5px;
+    position: relative;
+    width: 400px;
+    height: 360px;
+    border: 1px solid #003c74;
+    background: linear-gradient(to bottom, #ece9d8, #e4e1d0);
+    margin: 100px auto 0;
+    border-radius: 2px 2px 0 0;
+    box-shadow:
+        -1px -1px 0 1px #0469EC, /* Голубая полоса между рамками */
+        0 0 0 3px #003c74, /* Внутренняя синяя рамка */
+        0 0 0 1px rgba(0,0,0,0.3), /* Внешняя тень */
+        inset 0 0 2px 2px rgba(255,255,255,0.7), /* Внутреннее свечение */
+        inset 0 0 3px 3px rgba(255,255,255,0.5); /* Внутренняя белая тень */
 }
+  
 #app-icon
 {
-    width:24px;
-    height:24px;
+    width: 24px;
+    height: 24px;
 }
+
 .title-bar
 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 5px;
     color: white;
-    border: solid 1px white;
-    background-image: linear-gradient(#77CCFF, #0469EC, #0469EC,#0469EC, #0569FF,#0569FF,#0569FF); 
-    padding:5px;
-    box-shadow:inset 0px 0px 4px 1px #002195;
-    background-color: lightblue;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    margin:-3px;
+    background-image: linear-gradient(#77CCFF, #0469EC, #0469EC,#0469EC, #0569FF,#0569FF,#0569FF);
+    box-shadow: 
+        inset 0px 0px 4px 1px #002195, 
+        0 1px 0 0 #003c74, /* Нижняя синяя граница */
+        0 1px 0 0 #0469EC; /* Верхняя голубая граница */
+    border-radius: 4px 4px 0 0; 
 }
+
 .title-bar-left-side
 {
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
+    text-shadow: 1px 1px 0px darkblue;
 }
+
 .control-button, .control-button:disabled, .control-button:disabled:hover
 {
-    width:28px;
-    height:28px;
-    border-radius:5px;
-    border-color:white;
-    margin:0px;
-    text-align:center;
-    padding:-15px;
-    background-image:linear-gradient(to bottom right, #55A1FF, #0020B5);
+    width: 28px;
+    height: 28px;
+    border: solid 1px white;
+    border-radius: 5px;
+    margin: 0px;
+    text-align: center;
+    padding: -15px;
+    background-image: linear-gradient(to bottom right, #55A1FF, #0025B5);
     box-shadow: inset 3px 1px 3px 0px #77A1F5;
-    color:white;
-    font-size:18px;
-    font-weight:700;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
 }
+
 #close-button
 {
-    background-image:linear-gradient(to bottom right, #C97475, #F83002);
-    box-shadow:inset 3px 1px 3px 1px #C49A9B;
+    background-image: linear-gradient(to bottom right, #C97475, #FF3010);
+    box-shadow: inset 3px 1px 3px 1px #C49A9B;
 }
+
 .control-button:hover
 {
-    /*border-color:lightgray;*/
     background-image: linear-gradient(to bottom right, #75C1FF, #2045D5);
-    box-shadow:inset 0px 0px 3px 3px #77A1F5;
+    box-shadow: inset 0px 0px 3px 3px #77A1F5;
 }
+
 #close-button:hover
 {
-    background-image: linear-gradient(to bottom right, #D98485, #FF3030);
+    background-image: linear-gradient(to bottom right, #D98485, #FF3020);
     box-shadow: inset 0px 0px 3px 3px #C49A9B;
 }
+
 .control-button:disabled, .control-button:disabled:hover
 {
-    color:lightgray;
-    border-color:lightgrey;
+    color: lightgray;
+    border-color: lightgrey;
 }
