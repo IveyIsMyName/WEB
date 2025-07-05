@@ -111,6 +111,11 @@
     background-image: linear-gradient(to bottom right, #D98485, #FF3020);
     box-shadow: inset 0px 0px 3px 3px #C49A9B;
 }
+#close-button:active
+{
+    background-image: linear-gradient(to bottom right, #55A1CF, #0025B5);
+    box-shadow: inset 0px 0px 3px 3px #5781F5;
+}
 .control-button:active
 {
     background-image: linear-gradient(to bottom right, #55A1CF, #0025B5);
@@ -165,36 +170,93 @@
 {
     width: 100%
 }
+.display
+{
+    display:flex;
+    justify-content:center;
+}
 .menu-bar
 {
     display:flex;
     justify-content:left;
 }
-    .menu-bar > button
-    /*Для всех "button", вложенных в menu-bar*/
-    {
-        width: 50px;
-        height: 22px;
-        margin: 1px;
-        border: none;
-        background: linear-gradient(to bottom, #ece9d8, #e4e1d0);
-    }
-    .menu-bar > button:hover
-    {
-        box-shadow:1px 1px 0 0 grey;
-        background: rgb(245,242,225);
-    }
-    .menu-bar > button:active
-    {
-        box-shadow: inset 1px 1px 0 0 grey;
-        background: rgb(266, 223, 206);
-    }
+.menu-bar > button
+/*Для всех "button", вложенных в menu-bar*/
+{
+    width: 50px;
+    height: 22px;
+    margin: 1px;
+    border: none;
+    background: linear-gradient(to bottom, #ece9d8, #e4e1d0);
+}
+.menu-bar > button:hover
+{
+    box-shadow:1px 1px 0 0 grey;
+    background: rgb(245,242,225);
+}
+.menu-bar > button:active
+{
+    box-shadow: inset 1px 1px 0 0 grey;
+    background: rgb(266, 223, 206);
+}
     
 #text
 {
-    width:98%;
+    width:93%;
 }
 input[type=text]
 {
     text-align:right;
 }
+.memory-buttons
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:1px 0 0 0;
+    /*border: 1px solid;*/
+}
+.memory-buttons > button
+{
+    color:red;
+}
+.buttons
+{
+    display: flex;
+}
+.buttons  button
+{
+    width: 50px;
+    height: 40px;
+    margin: 5px 10px;
+    /*border-radius: 5px;*/
+    /*border:1px solid blue;*/
+}
+.memory-buttons > #square
+{
+    width: 32px;
+    height: 32px;
+    border:inset 2px;
+    margin: 7px 10px 6px;
+}
+.main-block button
+{
+    margin: 5px;
+}
+.wide-buttons > button
+{
+    width: 85px;
+    color: red;
+}
+.digit-buttons
+{
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    grid-template-rows: 40px 40px 40px 40px;
+    grid-gap: 10px;
+}
+.digit-buttons button
+{
+    color:darkblue;
+}
+
