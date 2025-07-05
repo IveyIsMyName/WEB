@@ -66,13 +66,9 @@
     align-items: center;
     padding: 5px;
     color: white;
-    /* margin:-3px;*/
     background-image: linear-gradient(#77CCFF, #0469EC, #0469EC,#0469EC, #0569FF,#0569FF,#0569FF);
-    /*box-shadow: 
-        inset 0px 0px 4px 1px #002195, 
-        0 1px 0 0 #003c74,*/ /* Нижняя синяя граница */
-    /*0 1px 0 0 #0469EC;*/ /* Верхняя голубая граница */
     border-radius: 2px 2px 0 0;
+    box-shadow: inset 0px 0px 4px 1px #002195;
 }
 
 .title-bar-left-side
@@ -115,6 +111,11 @@
     background-image: linear-gradient(to bottom right, #D98485, #FF3020);
     box-shadow: inset 0px 0px 3px 3px #C49A9B;
 }
+.control-button:active
+{
+    background-image: linear-gradient(to bottom right, #55A1CF, #0025B5);
+    box-shadow: inset 0px 0px 3px 3px #5781F5;
+}
 
 .control-button:disabled, .control-button:disabled:hover
 {
@@ -154,4 +155,46 @@
     height: 317px;
     /*background-color: darkblue;*/
     background-image: linear-gradient(to right,#001177CC,#003377FF,#001177CC);
+}
+#work-area
+{
+    width:95%;
+    display:block;
+}
+.menu-bar, .display, .buttons
+{
+    width: 100%
+}
+.menu-bar
+{
+    display:flex;
+    justify-content:left;
+}
+    .menu-bar > button
+    /*Для всех "button", вложенных в menu-bar*/
+    {
+        width: 50px;
+        height: 22px;
+        margin: 1px;
+        border: none;
+        background: linear-gradient(to bottom, #ece9d8, #e4e1d0);
+    }
+    .menu-bar > button:hover
+    {
+        box-shadow:1px 1px 0 0 grey;
+        background: rgb(245,242,225);
+    }
+    .menu-bar > button:active
+    {
+        box-shadow: inset 1px 1px 0 0 grey;
+        background: rgb(266, 223, 206);
+    }
+    
+#text
+{
+    width:98%;
+}
+input[type=text]
+{
+    text-align:right;
 }
