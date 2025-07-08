@@ -113,8 +113,8 @@
 }
 #close-button:active
 {
-    background-image: linear-gradient(to bottom right, #55A1CF, #0025B5);
-    box-shadow: inset 0px 0px 3px 3px #5781F5;
+    background-image: linear-gradient(to bottom right, #D95455,#FF3020);
+    box-shadow: inset 0px 0px 3px 3px #B48A8B;
 }
 .control-button:active
 {
@@ -197,7 +197,7 @@
 .menu-bar > button:active
 {
     box-shadow: inset 1px 1px 0 0 grey;
-    background: rgb(266, 223, 206);
+    background: rgb(226,223,206);
 }
     
 #text
@@ -229,15 +229,15 @@ input[type=text]
     width: 50px;
     height: 40px;
     margin: 5px 10px;
-    /*border-radius: 5px;*/
-    /*border:1px solid blue;*/
+    border-radius: 5px;
+    border:1px solid blue;
 }
 .memory-buttons > #square
 {
     width: 32px;
     height: 32px;
     border:inset 2px;
-    margin: 7px 10px 6px;
+    margin: 7.5px 10px 6px;
 }
 .main-block button
 {
