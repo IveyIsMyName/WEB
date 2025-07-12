@@ -1,0 +1,34 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body
+{
+    font-family: 'Roboto Condensed', monospace;
+    font-size: 32px;
+    background-image: linear-gradient(to right, #999999 50%, #a6a6a6 100%);
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+input
+{
+    font-size: 32px;
+}
+
+.input-form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+hr
+{
+    width:100%;
+    border: none;
+    height: 2px;
+    background-color: #000;
+    margin: 20px 0;
+    align-self: stretch;
+}
+
