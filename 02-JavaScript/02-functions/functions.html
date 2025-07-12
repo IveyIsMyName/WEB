@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        input, button
+        {
+            font-size:32px;
+        }
+        
+        #switchBackground
+        {
+            width:32px;
+            height:32px;
+            margin:24px;
+        }
+        #header
+        {
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+    </style>
+    <title>Functions</title>
+</head>
+<body>
+    <div id="header">
+        <div style="width:88%">Header</div>
+        <img src="img/moon.png" alt="Switch background image" id="switchBackground" onclick="SwitchBackground()" />
+    </div>
+    <h1>Functions</h1>
+    <input type="number" name="base" id="base" placeholder="Основание степени" />
+    <input type="number" name="exponent" id="exponent" placeholder="Показатель степени" />
+    <input type="number" name="power" id="power" placeholder="Степень" readonly />
+    <button onclick="calculatePower()">Вычислить</button>
+    <hr />
+    <script src="functions.js"></script>
+</body>
+</html>
