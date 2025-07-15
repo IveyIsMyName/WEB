@@ -3,32 +3,18 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="functions.css" />
     <link rel="stylesheet" href="style.css" />
-    <style>
-        input, button
-        {
-            font-size:32px;
-        }
-        
-        #switchBackground
-        {
-            width:32px;
-            height:32px;
-            margin:24px;
-        }
-        #header
-        {
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-        }
-    </style>
+    <link href="img/sun.png" rel="icon" type="image/x-icon" />
     <title>Functions</title>
 </head>
-<body>
+<body class="light">
     <div id="header">
         <div style="width:88%">Header</div>
-        <img src="img/moon.png" alt="Switch background image" id="switchBackground" onclick="SwitchBackground()" />
+        <label for="delay">Delay</label>
+        <input type="number" id="delay" name="delay" value="3" min="1" max="10" />
+        <div id="switchBackground" onclick="SwitchBackground()"></div>
+        <!--<img src="img/moon.png" alt="img/sun.png" id="switchBackground" onclick="SwitchBackground()" />-->
     </div>
     <h1>Functions</h1>
     <input type="number" name="base" id="base" placeholder="Основание степени" />

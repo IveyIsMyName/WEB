@@ -1,0 +1,57 @@
+﻿body
+{
+}
+input, button
+{
+    font-size: 32px;
+}
+
+#switchBackground
+{
+    width: 32px;
+    height: 32px;
+    margin: 24px;
+    /*transition:3s;*/
+    background-size:31px 31px;
+}
+
+#header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img[src="img/sun.png"]
+{
+    filter: brightness(0) invert(1);
+}
+.light
+{
+    background: #D8D8D8;
+    color:#323232;
+}
+.dark
+{
+    background:#323232;
+    color:#D8D8D8;
+}
+.light #switchBackground
+{
+    /*content: url('img/moon.png');*/
+    background-image: url('img/moon.png');
+}
+.dark #switchBackground
+{
+    /*content: url('img/sun.png');*/
+    background-image: url('img/sun.png');
+    filter: brightness(0) invert(1);
+}
+#delay
+{
+    width:35px;
+    height:25px;
+    margin:24px;
+    font-size:18px;
+    text-align:right;
+}

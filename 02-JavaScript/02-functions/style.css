@@ -4,7 +4,7 @@ body
 {
     font-family: 'Roboto Condensed', monospace;
     font-size: 32px;
-    /*background-image: linear-gradient(to right, #999999 50%, #a6a6a6 100%);*/
+    background-image: linear-gradient(to right, #999999 50%, #a6a6a6 100%);
     /*display: flex;
     flex-direction:column;
     align-items: center;*/
