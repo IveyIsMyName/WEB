@@ -19,7 +19,7 @@ function SwitchBackground()
     if (switchButton.attributes.src.nodeValue == 'img/moon.png')
     {
         switchButton.attributes.src.nodeValue = 'img/sun.png';
-        document.body.style.backgroundColor = "black";
+        document.body.style.backgroundColor = "#262626";
         document.body.style.color = "white";
     }
     else 
