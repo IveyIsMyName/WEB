@@ -1,9 +1,14 @@
 ﻿body
 {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    margin:0 300px 0 300px;
 }
 input, button
 {
     font-size: 32px;
+    width:30%;
 }
 
 #switchBackground
@@ -39,7 +44,7 @@ img[src="img/sun.png"]
 .light #switchBackground
 {
     /*content: url('img/moon.png');*/
-    background-image: url('img/moon.png');
+    background-image: url('img/sun.png');
 }
 .dark #switchBackground
 {
