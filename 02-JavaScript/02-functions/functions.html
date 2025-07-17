@@ -16,12 +16,18 @@
         <div id="switchBackground" onclick="SwitchBackground()"></div>
         <!--<img src="img/moon.png" alt="img/sun.png" id="switchBackground" onclick="SwitchBackground()" />-->
     </div>
+    <div id="mouse"></div>
     <h1>Functions</h1>
     <input type="number" name="base" id="base" placeholder="Основание степени" />
     <input type="number" name="exponent" id="exponent" placeholder="Показатель степени" />
     <input type="number" name="power" id="power" placeholder="Степень" readonly />
     <button onclick="calculatePower()">Вычислить</button>
     <hr />
+    <div id="photo-container">
+        <img src="" alt="Фотография" title="Фото" id="photo" />
+    </div>
+   
+    <input type="file" onchange="setImage()" id="image-file" style="width:auto; font-size:20px;" />
     <script src="functions.js"></script>
 </body>
 </html>
