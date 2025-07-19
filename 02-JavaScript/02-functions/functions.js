@@ -90,3 +90,53 @@ function addLeadingZero(number)
 {
     return number < 10 ? '0' + number : number;
 }
+
+document.getElementById("btn-start").onclick = function startCountdownTimer()
+{
+    let targetDate = document.getElementById("target-date");
+    let targetTime = document.getElementById("target-time");
+    let btnStart = document.getElementById("btn-start");
+    targetDate.disabled = targetTime.disabled = !targetDate.disabled;
+    if (btnStart.value === "Start")
+    {
+        btnStart.value = "Stop";
+        tickCountDown();
+    }
+    else
+    {
+        btnStart.value = "Start";
+    }
+}
+function tickCountDown()
+{
+    if (!document.getElementById("target-time").disabled) return;
+    let now = new Date();
+    console.log(`now timezoneOffset:\t${now.getTimezoneOffset()}`);
+    //Controls - это элементы интерфейса
+    let targetDateControl = document.getElementById("target-date");
+    let targetTimeControl = document.getElementById("target-time");
+    let targetDate = targetDateControl.valueAsDate;
+    let targetTime = targetTimeControl.valueAsDate;
+
+    targetDate.setHours(targetDate.getHours() + targetDate.getTimezoneOffset() / 60);
+    targetTime.setHours(targetTime.getHours() + targetTime.getTimezoneOffset() / 60);
+
+    //ѕриводим дату в целевом времени к выбранной дате:
+    targetTime.setFullYear(targetDate.getFullYear());
+    targetTime.setMonth(targetDate.getMonth());
+    targetTime.setDate(targetDate.getDate());
+
+    //ќпредел€ем промежуток времени до указанной даты:
+    let duration = targetTime - now;    //–азность дат вычисл€етс€ в формате timestamp
+    document.getElementById("duration").innerHTML = duration;
+    let timestamp = Math.trunc(duration / 1000);
+    document.getElementById("timestamp").innerHTML = timestamp;
+
+    //ќтображаем целевую дату/врем€ и промежуток на странице:
+    document.getElementById("target-date-value").innerHTML = targetDate;
+    document.getElementById("target-time-value").innerHTML = targetTime;
+
+    console.log(`targetTime timezoneOffset:\t${now.getTimezoneOffset()}`);
+
+    setTimeout(tickCountDown, 100);
+}

@@ -3,12 +3,13 @@
     display:flex;
     flex-direction:column;
     justify-content:space-between;
-    margin:0 300px 0 300px;
+    margin:0 400px 0 400px;
 }
 input, button
 {
     font-size: 32px;
     width:30%;
+    border-radius:10px;
 }
 
 #switchBackground
@@ -81,7 +82,6 @@ img[src="img/sun.png"]
     border-top: solid 1px;
     border-bottom: solid 1px;
     font-size: 24px;
-    
 }
 #clock h3
 {
@@ -91,4 +91,40 @@ input[type=checkbox]
 {
     width:24px;
     height:24px;
+}
+#display
+{
+    border:solid 1px;
+    font-size:32px;
+    display:flex;
+    justify-content:space-around;
+    padding: 10px;
+    margin:10px;
+}
+.time-block
+{
+    border:solid 3px;
+    /*border-radius: 10px;*/
+}
+.time-unit
+{
+    font-size:48px;
+    color:rgb(200,0,0);
+    width:148px;
+    height:148px;
+    background-color:Highlight;
+}
+.time-marker
+{
+    border: solid 1px;
+    background-color: darkred;
+    color: aliceblue;
+}
+.time-unit, .time-marker
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:wheat;
+    border:none;
 }
