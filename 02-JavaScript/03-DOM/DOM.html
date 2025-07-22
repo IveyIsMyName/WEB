@@ -5,10 +5,11 @@
     <meta charset="utf-8" />
     <title></title>
     <style>
-        p
+        body
         {
-            font-size:32px;
+            font-size: 32px;
             margin: 0 400px 0 400px;
+            background-image:linear-gradient(to right, lightgrey, grey);
         }
     </style>
 </head>
@@ -19,7 +20,31 @@
         DOM объединяет все элементы страницы в дерево объектов, корневым объектом которого является 'document'. Этот объект всегда неявно создается в любом JavaScript-коде.
     </p>
     <br />
+    <p>
+        У каждого элемента на странице есть 4 метода:
+        <ul style="font-size: 32px; margin: 0 400px 0 400px;">
+            <li>
+                append(element) - добавляет элемент в конец ноды, а именно перед закрывающим дескриптором. Node - узел дерева.
+            </li>
+            <li>
+                prepend(element) - добавляет элемент в начало ноды, а именно после открывающего дескриптора.
+            </li>
+            <li>
+                before(element) - добавляет элемент перед открывающим дескрипотром.
+            </li>
+            <li>
+                after(element) - добавляет элемент после закрывающего дескриптора
+            </li>
+            
+        </ul>
+    </p>
+    <br />
     <p id="check">
+
+    </p>
+    <p id="configuration" style="border:solid 1px;">
+
+        <b>Element content</b>
 
     </p>
     <script src="DOM.js"></script>
