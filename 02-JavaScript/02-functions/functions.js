@@ -107,7 +107,6 @@ document.getElementById("btn-start").onclick = function startCountdownTimer()
     else
     {
         btnStart.value = "Start";
-        
     }
 }
 
@@ -168,5 +167,4 @@ function tickCountDown()
     document.getElementById("seconds-unit").innerHTML = addLeadingZero(seconds);
 
     setTimeout(tickCountDown, 100);
-   
 }
