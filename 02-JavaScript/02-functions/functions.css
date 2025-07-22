@@ -35,12 +35,14 @@ img[src="img/sun.png"]
 .light
 {
     background: #D8D8D8;
-    color:#323232;
+    /*background:linear-gradient(to right, lightgrey, grey);*/
+    color: #323232;
 }
 .dark
 {
     background:#323232;
-    color:#D8D8D8;
+    /*background: linear-gradient(to right, grey, dark);*/
+    color: #D8D8D8;
 }
 .light #switchBackground
 {
