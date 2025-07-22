@@ -1,4 +1,4 @@
-// JavaScript source code
+ï»¿// JavaScript source code
 function calculatePower()
 {
     let base = Number(document.getElementById('base').value);
@@ -77,7 +77,7 @@ document.body.onload = function tick_timer()
     //{
     //    document.getElementById("current-date").style.visibility = "hidden";
     //}
-    //setTimeout(function, delay) âûçûâàåò ôóíêöèþ 'function' ñ çàäåðæêîé 'delay'
+    //setTimeout(function, delay) Ð²Ñ‹Ð·Ñ‹Ð²Ð°ÐµÑ‚ Ñ„ÑƒÐ½ÐºÑ†Ð¸ÑŽ 'function' Ñ Ð·Ð°Ð´ÐµÑ€Ð¶ÐºÐ¾Ð¹ 'delay'
 
     document.getElementById("current-date").style.visibility =
         document.getElementById("show-date").checked ? "visible" : "hidden";
@@ -112,31 +112,54 @@ function tickCountDown()
     if (!document.getElementById("target-time").disabled) return;
     let now = new Date();
     console.log(`now timezoneOffset:\t${now.getTimezoneOffset()}`);
-    //Controls - ýòî ýëåìåíòû èíòåðôåéñà
+    //Controls - ÑÑ‚Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¸Ð½Ñ‚ÐµÑ€Ñ„ÐµÐ¹ÑÐ°
     let targetDateControl = document.getElementById("target-date");
     let targetTimeControl = document.getElementById("target-time");
     let targetDate = targetDateControl.valueAsDate;
     let targetTime = targetTimeControl.valueAsDate;
 
+    //Ð’Ñ‹Ñ€Ð°Ð²Ð½Ð¸Ð²Ð°ÐµÐ¼ Ñ‡Ð°ÑÐ¾Ð²Ð¾Ð¹ Ð¿Ð¾ÑÑ
     targetDate.setHours(targetDate.getHours() + targetDate.getTimezoneOffset() / 60);
     targetTime.setHours(targetTime.getHours() + targetTime.getTimezoneOffset() / 60);
 
-    //Ïðèâîäèì äàòó â öåëåâîì âðåìåíè ê âûáðàííîé äàòå:
+    //ÐŸÑ€Ð¸Ð²Ð¾Ð´Ð¸Ð¼ Ð´Ð°Ñ‚Ñƒ Ð² Ñ†ÐµÐ»ÐµÐ²Ð¾Ð¼ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸ Ðº Ð²Ñ‹Ð±Ñ€Ð°Ð½Ð½Ð¾Ð¹ Ð´Ð°Ñ‚Ðµ:
     targetTime.setFullYear(targetDate.getFullYear());
     targetTime.setMonth(targetDate.getMonth());
     targetTime.setDate(targetDate.getDate());
 
-    //Îïðåäåëÿåì ïðîìåæóòîê âðåìåíè äî óêàçàííîé äàòû:
-    let duration = targetTime - now;    //Ðàçíîñòü äàò âû÷èñëÿåòñÿ â ôîðìàòå timestamp
+    //ÐžÐ¿Ñ€ÐµÐ´ÐµÐ»ÑÐµÐ¼ Ð¿Ñ€Ð¾Ð¼ÐµÐ¶ÑƒÑ‚Ð¾Ðº Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸ Ð´Ð¾ ÑƒÐºÐ°Ð·Ð°Ð½Ð½Ð¾Ð¹ Ð´Ð°Ñ‚Ñ‹:
+    let duration = targetTime - now;    //Ð Ð°Ð·Ð½Ð¾ÑÑ‚ÑŒ Ð´Ð°Ñ‚ Ð²Ñ‹Ñ‡Ð¸ÑÐ»ÑÐµÑ‚ÑÑ Ð² Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ðµ timestamp
     document.getElementById("duration").innerHTML = duration;
     let timestamp = Math.trunc(duration / 1000);
     document.getElementById("timestamp").innerHTML = timestamp;
 
-    //Îòîáðàæàåì öåëåâóþ äàòó/âðåìÿ è ïðîìåæóòîê íà ñòðàíèöå:
+    //ÐžÑ‚Ð¾Ð±Ñ€Ð°Ð¶Ð°ÐµÐ¼ Ñ†ÐµÐ»ÐµÐ²ÑƒÑŽ Ð´Ð°Ñ‚Ñƒ/Ð²Ñ€ÐµÐ¼Ñ Ð¸ Ð¿Ñ€Ð¾Ð¼ÐµÐ¶ÑƒÑ‚Ð¾Ðº Ð½Ð° ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ðµ:
     document.getElementById("target-date-value").innerHTML = targetDate;
     document.getElementById("target-time-value").innerHTML = targetTime;
 
     console.log(`targetTime timezoneOffset:\t${now.getTimezoneOffset()}`);
+    ////////////////////////////////////////////////////////////////////
+    const SECONDS_IN_MINUTE = 60;
+    const SECONDS_IN_HOUR = 3600;
+    const SECONDS_IN_DAY = 86400;
+    const SECONDS_IN_WEEK = SECONDS_IN_DAY * 7;
+    const DAYS_IN_MONTH = 365.25 / 12;
+    const SECONDS_IN_MONTH = SECONDS_IN_DAY * DAYS_IN_MONTH;
+    const SECONDS_IN_YEAR = SECONDS_IN_DAY * 365 + SECONDS_IN_HOUR * 6;
+
+    let time_of_day = timestamp % SECONDS_IN_DAY;
+    let hours = Math.floor(time_of_day / SECONDS_IN_HOUR);
+    if (hours > 0) time_of_day = (time_of_day % (hours * SECONDS_IN_HOUR));
+
+    let minutes = Math.floor(time_of_day / SECONDS_IN_MINUTE);
+    if (minutes > 0) time_of_day = (time_of_day % (minutes * SECONDS_IN_MINUTE));
+
+    let seconds = time_of_day;
+    ////////////////////////////////////////////////////////////////////
+
+    document.getElementById("hours-unit").innerHTML = addLeadingZero(hours);
+    document.getElementById("minutes-unit").innerHTML = addLeadingZero(minutes);
+    document.getElementById("seconds-unit").innerHTML = addLeadingZero(seconds);
 
     setTimeout(tickCountDown, 100);
 }
