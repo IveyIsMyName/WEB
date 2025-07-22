@@ -58,13 +58,13 @@ document.body.onload = function tick_timer()
 {
     let time = new Date();
     document.getElementById("full-time").innerHTML = time;
-    document.getElementById("hours").innerHTML =   addLeadingZero(time.getHours());
+    document.getElementById("hours").innerHTML = addLeadingZero(time.getHours());
     document.getElementById("minutes").innerHTML = addLeadingZero(time.getMinutes());
     document.getElementById("seconds").innerHTML = addLeadingZero(time.getSeconds());
 
     document.getElementById("year").innerHTML = time.getFullYear();
-    document.getElementById("month").innerHTML = addLeadingZero(time.getMonth()+1);
-    document.getElementById("day").innerHTML =   addLeadingZero(time.getDate());
+    document.getElementById("month").innerHTML = addLeadingZero(time.getMonth() + 1);
+    document.getElementById("day").innerHTML = addLeadingZero(time.getDate());
 
     document.getElementById("weekday").innerHTML = time.toLocaleDateString('ru', { weekday: 'long' });
 
@@ -91,6 +91,8 @@ function addLeadingZero(number)
     return number < 10 ? '0' + number : number;
 }
 
+let countdownTimeout;
+let duration = 0;
 document.getElementById("btn-start").onclick = function startCountdownTimer()
 {
     let targetDate = document.getElementById("target-date");
@@ -100,43 +102,100 @@ document.getElementById("btn-start").onclick = function startCountdownTimer()
     if (btnStart.value === "Start")
     {
         btnStart.value = "Stop";
+        if (countdownTimeout)
+        {
+            clearTimeout(countdownTimeout);
+        }
+        if (duration <= 0)
+        {
+            let now = new Date();
+            let targetDateTime = getTargetDateTime(targetDate, targetTime);
+            duration = targetDateTime - now;
+        }
         tickCountDown();
     }
     else
     {
         btnStart.value = "Start";
+        if (countdownTimeout)
+        {
+            clearTimeout(countdownTimeout);
+        }
     }
+}
+function getTargetDateTime(targetDate, targetTime)
+{
+    let targetDateObj = document.getElementById("target-date").valueAsDate;
+    let targetTimeObj = document.getElementById("target-time").valueAsDate;
+
+    // Корректировка времени с учетом часового пояса
+    targetDateObj.setHours(targetDateObj.getHours() + targetDateObj.getTimezoneOffset() / 60);
+    targetTimeObj.setHours(targetTimeObj.getHours() + targetTimeObj.getTimezoneOffset() / 60);
+
+    // Синхронизация даты и времени
+    targetTimeObj.setFullYear(targetDateObj.getFullYear());
+    targetTimeObj.setMonth(targetDateObj.getMonth());
+    targetTimeObj.setDate(targetDateObj.getDate());
+
+    return targetTimeObj;
 }
 function tickCountDown()
 {
     if (!document.getElementById("target-time").disabled) return;
-    let now = new Date();
-    console.log(`now timezoneOffset:\t${now.getTimezoneOffset()}`);
-    //Controls - это элементы интерфейса
-    let targetDateControl = document.getElementById("target-date");
-    let targetTimeControl = document.getElementById("target-time");
-    let targetDate = targetDateControl.valueAsDate;
-    let targetTime = targetTimeControl.valueAsDate;
 
-    targetDate.setHours(targetDate.getHours() + targetDate.getTimezoneOffset() / 60);
-    targetTime.setHours(targetTime.getHours() + targetTime.getTimezoneOffset() / 60);
+    //let now = new Date();
+    //console.log(`now timezoneOffset:\t${now.getTimezoneOffset()}`);
+    //Controls - это элементы интерфейса
+    //let targetDateControl = document.getElementById("target-date");
+    //let targetTimeControl = document.getElementById("target-time");
+    //let targetDate = targetDateControl.valueAsDate;
+    //let targetTime = targetTimeControl.valueAsDate;
+
+    //targetDate.setHours(targetDate.getHours() + targetDate.getTimezoneOffset() / 60);
+    //targetTime.setHours(targetTime.getHours() + targetTime.getTimezoneOffset() / 60);
 
     //Приводим дату в целевом времени к выбранной дате:
-    targetTime.setFullYear(targetDate.getFullYear());
-    targetTime.setMonth(targetDate.getMonth());
-    targetTime.setDate(targetDate.getDate());
+    //targetTime.setFullYear(targetDate.getFullYear());
+    //targetTime.setMonth(targetDate.getMonth());
+    //targetTime.setDate(targetDate.getDate());
+
+    // Преобразуем duration в часы, минуты, секунды:
+    /*let duration = targetTime - now; */   //Разность дат вычисляется в формате timestamp
+    duration -= 100; // уменьшаем на 100 мс (интервал таймера)
+    if (duration <= 0)
+    {
+        document.getElementById("hours-unit").innerHTML = "00";
+        document.getElementById("minutes-unit").innerHTML = "00";
+        document.getElementById("seconds-unit").innerHTML = "00";
+        document.getElementById("btn-start").value = "Start";
+        duration = 0;
+        return;
+    }
+
+    let seconds = Math.floor((duration / 1000) % 60);
+    let minutes = Math.floor((duration / (1000 * 60)) % 60);
+    let hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+    //let days = Math.floor(duration / (1000 * 60 * 60 * 24));
+
+    //Выводим в блоки
+    document.getElementById("hours-unit").innerHTML = addLeadingZero(hours);
+    document.getElementById("minutes-unit").innerHTML = addLeadingZero(minutes);
+    document.getElementById("seconds-unit").innerHTML = addLeadingZero(seconds);
 
     //Определяем промежуток времени до указанной даты:
-    let duration = targetTime - now;    //Разность дат вычисляется в формате timestamp
     document.getElementById("duration").innerHTML = duration;
-    let timestamp = Math.trunc(duration / 1000);
-    document.getElementById("timestamp").innerHTML = timestamp;
+    document.getElementById("timestamp").innerHTML = Math.trunc(duration / 1000);
+    //let timestamp = Math.trunc(duration / 1000);
+    //document.getElementById("timestamp").innerHTML = timestamp;
 
     //Отображаем целевую дату/время и промежуток на странице:
-    document.getElementById("target-date-value").innerHTML = targetDate;
-    document.getElementById("target-time-value").innerHTML = targetTime;
+    //document.getElementById("target-date-value").innerHTML = targetDate;
+    //document.getElementById("target-time-value").innerHTML = targetTime;
 
-    console.log(`targetTime timezoneOffset:\t${now.getTimezoneOffset()}`);
+    /*console.log(`targetTime timezoneOffset:\t${now.getTimezoneOffset()}`);*/
 
-    setTimeout(tickCountDown, 100);
+    if (document.getElementById("btn-start").value === "Stop")
+    {
+        setTimeout(tickCountDown, 100);
+    }
 }
